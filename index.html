@@ -12,7 +12,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 Nunito,sy
 .hero{background:linear-gradient(160deg,var(--sea),#0a7f9c 55%,var(--pink));color:#fff;text-align:center;padding:48px 20px 64px;position:relative;overflow:hidden}
 .flags{height:34px;background:repeating-linear-gradient(90deg,var(--pink) 0 44px,var(--sun) 44px 88px,var(--sea) 88px 132px,#fff 132px 176px);clip-path:polygon(0 0,100% 0,100% 40%,97% 100%,94% 40%,91% 100%,88% 40%,85% 100%,82% 40%,79% 100%,76% 40%,73% 100%,70% 40%,67% 100%,64% 40%,61% 100%,58% 40%,55% 100%,52% 40%,49% 100%,46% 40%,43% 100%,40% 40%,37% 100%,34% 40%,31% 100%,28% 40%,25% 100%,22% 40%,19% 100%,16% 40%,13% 100%,10% 40%,7% 100%,4% 40%,1% 100%,0 40%)}
 h1,h2{font-family:"Lilita One",Impact,sans-serif;font-weight:400;letter-spacing:.01em;margin:0}
-h1{font-size:clamp(46px,13vw,104px);line-height:.95;text-shadow:3px 3px 0 var(--pink)}
+h1{font-size:clamp(40px,11vw,96px);line-height:.95;text-shadow:3px 3px 0 var(--pink)}
 .fifty{display:inline-block;background:var(--sun);color:var(--ink);border-radius:50%;width:1.35em;height:1.35em;line-height:1.35em;font-size:.9em;transform:rotate(-8deg);text-shadow:none;box-shadow:4px 4px 0 var(--pink)}
 .sub{font-size:20px;font-weight:800;margin:18px 0 6px}
 .count{display:inline-block;margin-top:14px;background:rgba(0,0,0,.28);border-radius:999px;padding:8px 20px;font-weight:800}
@@ -37,6 +37,7 @@ input,textarea{font:inherit;color:var(--ink);background:var(--bg);border:2px sol
 .post{border-left:6px solid var(--sea);padding:8px 14px;margin:10px 0;background:var(--card);border-radius:0 12px 12px 0}
 .post small{color:var(--muted)}.post p{margin:4px 0 0;white-space:pre-wrap;overflow-wrap:anywhere}
 .note{color:var(--muted);font-size:15px}
+.card a:not(.btn){color:var(--sea);font-weight:800}
 footer{text-align:center;padding:24px;color:var(--muted)}
 .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:14px}
 h3{font-family:"Lilita One",sans-serif;font-weight:400;font-size:22px;margin:0 0 10px;color:var(--sea)}
@@ -48,8 +49,7 @@ button[disabled]{opacity:.5;cursor:wait}
 .tally{font-family:'Lilita One',sans-serif;font-size:24px;text-align:center;margin:20px 0 0;color:var(--sea)}
 </style></head><body>
 <header class="hero">
-<p style="margin:0;font-weight:800">Gary &amp; friends are throwing a party for</p>
-<h1>Emily is <span class="fifty">50</span></h1>
+<h1>Happy Birthday,<br>Emily! <span class="fifty">50</span></h1>
 <p class="sub">Barceló Maya Caribe · Riviera Maya, Mexico</p>
 <p style="margin:0">Thursday, Nov 11 – Tuesday, Nov 16, 2027</p>
 <div class="count" id="count">Counting down…</div>
@@ -61,15 +61,15 @@ button[disabled]{opacity:.5;cursor:wait}
 <section><h2>The plan</h2>
 <div class="facts">
 <div class="card"><b>When</b>Fly out Thursday, Nov 11. Fly home Tuesday, Nov 16. Dates are tentative, so hold them but don’t book flights yet.</div>
-<div class="card"><b>Where</b>Barceló Maya Caribe, an all-inclusive resort on the Riviera Maya coast.</div>
+<div class="card"><b>Where</b>Barceló Maya Caribe, an all-inclusive resort on the Riviera Maya coast.<br><a href="https://www.barcelo.com/en-us/barcelo-maya-caribe/" target="_blank" rel="noopener">See the resort</a></div></div>
 <div class="card soon"><b>Booking code</b>Coming soon. Gary will post the room-block code and link here as soon as the hotel releases it.</div>
 </div></section>
 <section><h2>Getting there</h2>
-<div class="card"><p style="margin:0">Flight tips and the best airport will go here. Post your plans in the thread below so we can coordinate rides from the airport and share arrival times.</p></div></section>
+<div class="card"><p style="margin:0">Fly into Cancún International Airport (CUN). Once your flights are booked, share your arrival and departure times so we can set up shuttles to and from the resort.</p></div></section>
 <section><h2>Who’s coming</h2>
 <div class="card">
-<p style="margin:0 0 10px"><b>RSVP:</b> tap your name (or type it), tell us how many are in your group, then pick one. One RSVP per person is fine, and you can RSVP again to change your answer.</p>
-<div class="chips" id="quick" style="margin-bottom:12px"></div>
+<p style="margin:0 0 10px"><b>RSVP:</b> enter your first name, tell us how many are in your group, then pick one. You can RSVP again to change your answer.</p>
+
 <div class="fields">
 <label>Your first name<input id="rn" maxlength="30" autocomplete="given-name"></label>
 <label>People in your group, including you<select id="rs"><option value="">Choose…</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
@@ -99,14 +99,14 @@ button[disabled]{opacity:.5;cursor:wait}
 <p class="note" id="wanote"></p>
 </div></section>
 </main>
-<footer>Made with love for Emily’s 50th. See you in Mexico!</footer>
+<footer>See y'all in Mexico!</footer>
 <script>
 (function(){
 var FORM='https://docs.google.com/forms/d/e/1FAIpQLSc_vu87WUd2UxNESg15BPkbQTBLbe91Ili7Ylh5FmLB86yRCg/formResponse';
 var CSV='https://docs.google.com/spreadsheets/d/e/2PACX-1vQ0C6-qIdOjcRfVJB_sk2aH7lUJkSbkPNfG-iIh667XZFOkLN3zl2drghB9bx3Zre71YXsPnoSF8s23/pub?gid=1151351257&single=true&output=csv';
 var E_NAME='entry.1934981376',E_RESP='entry.1745064344',E_SIZE='entry.686785514',E_WITH='entry.1820521131';
 var WA=''; /* paste the WhatsApp invite link between the quotes */
-var NAMES=['Jim','Amy','Lisa','Kathy','Erica','Beep','Michael','Kelly','Marc', 'Ona','Kenny','Beth'];
+
 var t=new Date(2027,10,11),d=Math.ceil((t-new Date())/864e5);
 document.getElementById('count').textContent=d>0?d+' days until we fly out':'Time to pack!';
 var wa=document.getElementById('wa');
@@ -147,9 +147,7 @@ function load(){
   rows=keep;mine={};render();
  }).catch(function(){render()});
 }
-var q=document.getElementById('quick');
-NAMES.forEach(function(n){var li=document.createElement('li');li.className='pick';li.textContent=n;li.tabIndex=0;
- function go(){rn.value=n;rs.focus()}li.onclick=go;li.onkeydown=function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();go()}};q.appendChild(li)});
+
 Array.prototype.forEach.call(document.querySelectorAll('.rbtns button'),function(b){b.addEventListener('click',function(){
  var n=rn.value.trim().slice(0,30);
  if(!n){msg.textContent='Please enter your name first.';rn.focus();return}
