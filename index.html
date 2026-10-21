@@ -49,7 +49,7 @@ button[disabled]{opacity:.5;cursor:wait}
 .tally{font-family:'Lilita One',sans-serif;font-size:24px;text-align:center;margin:20px 0 0;color:var(--sea)}
 </style></head><body>
 <header class="hero">
-<h1>Happy Birthday,<br>Emily! <span class="fifty">50</span></h1>
+<h1>Happy Birthday Emily! <span class="fifty">50</span></h1>
 <p class="sub">Barceló Maya Caribe · Riviera Maya, Mexico</p>
 <p style="margin:0">Thursday, Nov 11 – Tuesday, Nov 16, 2027</p>
 <div class="count" id="count">Counting down…</div>
@@ -130,7 +130,7 @@ function render(){
  });
  var cnt={yes:2+L.yes.length,maybe:L.maybe.length,no:L.no.length};
  ['yes','maybe','no'].forEach(function(c){var ul=document.getElementById('l-'+c);ul.textContent='';
-  if(c==='yes'){chip(ul,'Emily, guest of honor',1);chip(ul,'Gary')}
+  if(c==='yes'){chip(ul,'Emily and Gary',1);
   L[c].forEach(function(p){chip(ul,p.n)});
   if(!ul.children.length){var li=document.createElement('li');li.textContent='No one yet';li.style.opacity='.6';ul.appendChild(li)}
  });
