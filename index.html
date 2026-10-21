@@ -53,6 +53,8 @@ button[disabled]{opacity:.5;cursor:wait}
 <p class="sub">Barceló Maya Caribe · Riviera Maya, Mexico</p>
 <p style="margin:0">Thursday, Nov 11 – Tuesday, Nov 16, 2027</p>
 <div class="count" id="count">Counting down…</div>
+<p style="margin:16px 0 0"><button id="mus" type="button">🎺 Play music</button></p>
+<audio id="aud" src="music.mp3" loop preload="none"></audio>
 </header>
 <div class="flags" aria-hidden="true" style="margin-top:-2px"></div>
 <main>
@@ -159,6 +161,7 @@ Array.prototype.forEach.call(document.querySelectorAll('.rbtns button'),function
   msg.textContent='Thanks, '+n+'! You’re down as: '+b.textContent+' (group of '+rs.value+').';
  }).catch(function(){msg.textContent='That didn’t go through. Check your connection and try again.'}).then(function(){btns.forEach(function(x){x.disabled=false})});
 })});
+var au=document.getElementById('aud'),mb=document.getElementById('mus');au.volume=.5;mb.onclick=function(){if(au.paused){au.play();mb.textContent='🔇 Pause music'}else{au.pause();mb.textContent='🎺 Play music'}};
 render();load();
 })();
 </script></body></html>
