@@ -61,7 +61,7 @@ button[disabled]{opacity:.5;cursor:wait}
 <section><h2>The plan</h2>
 <div class="facts">
 <div class="card"><b>When</b>Fly out Thursday, Nov 11. Fly home Tuesday, Nov 16. Dates are tentative, so hold them but don’t book flights yet.</div>
-<div class="card"><b>Where</b>Barceló Maya Caribe, an all-inclusive resort on the Riviera Maya coast.<br><a href="https://www.barcelo.com/en-us/barcelo-maya-caribe/" target="_blank" rel="noopener">See the resort</a></div></div>
+<div class="card"><b>Where</b>Barceló Maya Caribe, an all-inclusive resort on the Riviera Maya coast.<br><a href="https://www.barcelo.com/en-us/barcelo-maya-caribe/" target="_blank" rel="noopener">See the resort</a></div>
 <div class="card soon"><b>Booking code</b>Coming soon. Gary will post the room-block code and link here as soon as the hotel releases it.</div>
 </div></section>
 <section><h2>Getting there</h2>
@@ -130,7 +130,7 @@ function render(){
  });
  var cnt={yes:2+L.yes.length,maybe:L.maybe.length,no:L.no.length};
  ['yes','maybe','no'].forEach(function(c){var ul=document.getElementById('l-'+c);ul.textContent='';
-  if(c==='yes'){chip(ul,'Emily and Gary',1);
+  if(c==='yes'){chip(ul,'Emily and Gary',1)}
   L[c].forEach(function(p){chip(ul,p.n)});
   if(!ul.children.length){var li=document.createElement('li');li.textContent='No one yet';li.style.opacity='.6';ul.appendChild(li)}
  });
