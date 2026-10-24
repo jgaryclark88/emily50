@@ -266,4 +266,39 @@ var au=document.getElementById('aud'),mb=document.getElementById('mus');au.volum
 render();load();
 
 })();
-</script></body></html>
+</script>
+<script>
+(function keepGalleryArrowsVisible() {
+    function fixArrows() {
+        var iframe = document.querySelector('.pa-carousel-widget iframe');
+
+        if (!iframe) {
+            setTimeout(fixArrows, 500);
+            return;
+        }
+
+        try {
+            var iframeDoc =
+                iframe.contentDocument ||
+                iframe.contentWindow.document;
+
+            var arrows = iframeDoc.querySelectorAll('.jx-carousel-arrow');
+
+            if (!arrows.length) {
+                setTimeout(fixArrows, 500);
+                return;
+            }
+
+            arrows.forEach(function(arrow) {
+                arrow.style.setProperty('opacity', '1', 'important');
+            });
+
+        } catch (error) {
+            console.log('Gallery iframe cannot be edited:', error);
+        }
+    }
+
+    window.addEventListener('load', fixArrows);
+})();
+</script>
+</body></html>
