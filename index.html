@@ -264,18 +264,6 @@ Array.prototype.forEach.call(document.querySelectorAll('.rbtns button'),function
 })});
 var au=document.getElementById('aud'),mb=document.getElementById('mus');au.volume=.5;mb.onclick=function(){if(au.paused){au.play();mb.textContent='🔇 Pause music'}else{au.pause();mb.textContent='🎺 Play music'}};
 render();load();
- /* NEW SLIDER FUNCTIONALITY JavaScript */
-var items = document.querySelectorAll('.gal-item'), nextBtn = document.getElementById('nextGalBtn'), prevBtn = document.getElementById('prevGalBtn'), page = 0, perPage = 4;
-function updateSlider(){
-    items.forEach(function(el, i){
-        if(i >= page * perPage && i < (page + 1) * perPage){ el.classList.add('active'); }
-        else { el.classList.remove('active'); }
-    });
-    prevBtn.disabled = page === 0;
-    nextBtn.disabled = (page + 1) * perPage >= items.length;
-}
-nextBtn.onclick = function(){ if((page + 1) * perPage < items.length){ page++; updateSlider(); } };
-prevBtn.onclick = function(){ if(page > 0){ page--; updateSlider(); } };
 
 })();
 </script></body></html>
