@@ -269,11 +269,12 @@ render();load();
 </script>
 <script>
 (function keepGalleryArrowsVisible() {
+
     function fixArrows() {
+
         var iframe = document.querySelector('.pa-carousel-widget iframe');
 
         if (!iframe) {
-            setTimeout(fixArrows, 500);
             return;
         }
 
@@ -284,21 +285,17 @@ render();load();
 
             var arrows = iframeDoc.querySelectorAll('.jx-carousel-arrow');
 
-            if (!arrows.length) {
-                setTimeout(fixArrows, 500);
-                return;
-            }
-
             arrows.forEach(function(arrow) {
                 arrow.style.setProperty('opacity', '1', 'important');
             });
 
         } catch (error) {
-            console.log('Gallery iframe cannot be edited:', error);
+            // ignore
         }
     }
 
-    window.addEventListener('load', fixArrows);
+    setInterval(fixArrows, 250);
+
 })();
 </script>
 </body></html>
