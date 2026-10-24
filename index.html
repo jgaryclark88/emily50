@@ -104,6 +104,16 @@ button[disabled]{opacity:.5;cursor:wait}
         grid-template-columns: repeat(2, 1fr);
     }
 }
+/* FORCE PUBLIC ALBUM ARROWS TO STAY VISIBLE */
+.pa-carousel-widget .jx-carousel-arrow {
+    opacity: 0.85 !important;
+    background: rgba(15, 181, 174, 0.4) !important; /* Matches your --sea theme color */
+    border-radius: 8px !important;
+}
+.pa-carousel-widget .jx-carousel-arrow:hover {
+    opacity: 1 !important;
+    background: rgba(255, 61, 129, 0.7) !important; /* Flips to your --pink theme color on hover */
+}
 
 </style></head><body>
 <header class="hero">
